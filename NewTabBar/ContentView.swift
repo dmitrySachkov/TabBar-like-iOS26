@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var activeTab: TabBarItem = .browsing
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack(alignment: .bottom) {
+            Rectangle()
+                .foregroundStyle(.clear)
+            
+            CustomTabBarView(activeTab: $activeTab, showSearchBar: true) { isExpanded in
+                
+            } onSearchTextChanged: { searchText in
+                
+            }
         }
-        .padding()
     }
 }
 
