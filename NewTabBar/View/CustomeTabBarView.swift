@@ -26,6 +26,18 @@ enum TabBarItem: String, CaseIterable {
     var index: Int {
         Self.allCases.firstIndex(of: self) ?? 0
     }
+    
+    @ViewBuilder
+    var associatedView: some View {
+        switch self {
+        case .recent:
+            RecentView()
+        case .shared:
+            SharedView()
+        case .browsing:
+            BrowsingView()
+        }
+    }
 }
 
 struct CustomTabBarView: View {

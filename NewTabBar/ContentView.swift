@@ -16,6 +16,8 @@ struct ContentView: View {
             Rectangle()
                 .foregroundStyle(.clear)
             
+            activeTab.associatedView
+            
             CustomTabBarView(activeTab: $activeTab, showSearchBar: true) { isExpanded in
                 
             } onSearchTextChanged: { searchText in
